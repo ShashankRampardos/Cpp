@@ -6,17 +6,30 @@ class time
 {
     int H,M,S;
 public:
-    time()
-    {}
-    time (bool,bool,bool);
+    time ();
     void settime(int,int,int);
     void showtime();
+    time operator+(time t)
+    {
+    t.H=t.H+H;
+    t.M=t.M+M;
+    t.S=t.S+S;
+//Normalize
+    t.M=t.M+t.S/60;
+    t.S=t.S%60;
+    t.H=t.H+t.M/60;
+    t.M=t.M%60;
+
+    return t;
+    }
+
+
 
 };
 }
-timeDec::time::time(bool a,bool b,bool c)
+timeDec::time::time()
     {
-        H=a;M=b;S=c;
+        H=0;M=0;S=0;
     }
 void timeDec::time::settime(int h,int m,int s)
     {
