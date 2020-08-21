@@ -4,11 +4,15 @@
 using namespace timeDec;
 int main()
 {
-    time t(0,0,0);
+    time t;
     int h,m,s;
     cout<<"Enter time:";
     cin>>h>>m>>s;
     t.settime(h,m,s);
     t.showtime();
+    time t2;
+    t2.settime(3,23,345);
+    t2=t.operator+(t2);
+    t2.showtime();
     getch();
 }
