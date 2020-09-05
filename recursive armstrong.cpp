@@ -4,8 +4,8 @@
 using namespace std;
 
 int isamst(int,short,int=0);
-int power(int,short);
-int countdigit(int);
+inline int power(int,short);
+inline int countdigit(int);
 
 int countdigit(int num)
 {  short cont=0;
