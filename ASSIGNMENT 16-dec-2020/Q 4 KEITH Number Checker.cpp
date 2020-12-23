@@ -94,5 +94,7 @@ int main()
         cout<<endl<<*(digits+counta)<<" is a KEITH Number.";
     else
         cout<<endl<<input<<" not a KEITH Number.";
+    delete temp;
+    delete digits;
 getch();
 }
