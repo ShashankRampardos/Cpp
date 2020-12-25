@@ -59,6 +59,7 @@ j=0;
           cout<<small<<" is Saddle Point of this matrix"<<endl;
           output(matrix,order);
           getch();
+         delete matrix;
           exit(0);
       }
     }
@@ -67,4 +68,5 @@ j=0;
   cout<<"This Matrix have no Saddle point"<<endl;
   output(matrix,order);
   getch();
+   delete matrix;
 }
