@@ -49,6 +49,8 @@ int main()
      n--;
 
    }
+   delete st; 
    getch();
    return 0;
+    
 }
