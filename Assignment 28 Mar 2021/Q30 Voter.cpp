@@ -53,5 +53,5 @@ int main()
             cout<<V[i].name;
     }
 
-
+  delete V;
 }
