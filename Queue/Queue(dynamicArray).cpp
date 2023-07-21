@@ -2,7 +2,7 @@
 #include<windows.h>
 using namespace std;
 
-class Stack{
+class Queue{
   int *arr;
   int capacity;
   int lastIndex;
@@ -33,18 +33,18 @@ class Stack{
 
 
       void shiftLeft(int point){
-          for(int i=lastIndex;i>point;i--){
-            arr[i-1]=arr[i];
+          for(int i=0;i<lastIndex;i++){
+            arr[i]=arr[i+1];
           }
       }
   public:
-      Array(){
-      arr=new int[5];
-      capacity=5;
+      Queue(){
+      arr=new int[10];
+      capacity=10;
       lastIndex=-1;
 
       }
-      ~Array(){
+      ~Queue(){
        delete arr;
       }
 
@@ -78,6 +78,7 @@ class Stack{
 
 
      int peek(){
+
      return arr[0];
      }
 
@@ -85,4 +86,23 @@ class Stack{
 int main(){
   Queue a;
 
+  a.enqueue(1);
+  a.enqueue(2);
+  a.enqueue(3);
+  a.enqueue(4);
+  a.enqueue(5);
+  a.enqueue(6);
+  a.enqueue(7);
+  a.enqueue(8);
+  a.enqueue(9);
+  a.enqueue(10);
+  cout<<" "<<a.peek();
+  a.dequeue();
+  cout<<" "<<a.peek();
+  a.dequeue();
+  cout<<" "<<a.peek();
+  a.dequeue();
+  cout<<" "<<a.peek();
+  a.dequeue();
+  cout<<" "<<a.peek();
 }
