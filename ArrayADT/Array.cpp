@@ -7,6 +7,18 @@ class Array{
   const int capacity;
   int lastIndex;
 
+   void shiftRight(int point){
+          for(int i=lastIndex;i>point;i--){
+            arr[i]=arr[i-1];
+          }
+      }
+
+      void shiftLeft(int point){
+          for(int i=point;i<lastIndex;i++){
+            arr[i]=arr[i+1];
+          }
+      }
+
   public:
       Array():capacity(100){
 
@@ -62,7 +74,6 @@ class Array{
          }
       }
 
-
      int getElement(int index){
       if(index<=lastIndex)
         return arr[index];
@@ -72,28 +83,18 @@ class Array{
      return arr[lastIndex];
      }
 
-      void shiftRight(int point){
-          for(int i=lastIndex;i>point;i--){
-            arr[i]=arr[i-1];
-          }
-      }
-
-
-      void shiftLeft(int point){
-          for(int i=lastIndex;i>point;i--){
-            arr[i-1]=arr[i];
-          }
-      }
-
 };
 int main(){
-//  Array a;
-//  a.insertData(4);
-//   a.insertData(5);
-//    a.insertData(8);
-//     a.insertData(7);
-//a.displayArray();
-//a.deleteArrayElement(2);
-//a.displayArray();
+  Array a;
+  a.insertData(4);
+   a.insertData(5);
+    a.insertData(8);
+     a.insertData(7);
+     a.insertData(6);
+     a.insertData(0);
+     a.insertData(1);
+a.displayArray();
+a.deleteArrayElement(1);
+a.displayArray();
 
 }
