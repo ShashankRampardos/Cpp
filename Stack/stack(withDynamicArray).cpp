@@ -25,18 +25,7 @@ class Stack{
     arr=p;
   }
 
-   void shiftRight(int point){
-          for(int i=lastIndex;i>point;i--){
-            arr[i]=arr[i-1];
-          }
-      }
 
-
-      void shiftLeft(int point){
-          for(int i=lastIndex;i>point;i--){
-            arr[i-1]=arr[i];
-          }
-      }
   public:
       Stack(){
       arr=new int[5];
@@ -77,11 +66,21 @@ class Stack{
 
 
      int peek(){
+         cout<<arr[lastIndex];
      return arr[lastIndex];
      }
 
 };
 int main(){
-  Stack a;
-  a.push(4);
+    Stack s;
+  s.push(1);
+  s.push(2);
+  s.push(3);
+  s.push(4);
+  s.push(5);
+  s.push(6);
+  s.push(7);
+  s.push(8);
+  s.peek();s.pop();s.peek();s.pop();
+
 }
