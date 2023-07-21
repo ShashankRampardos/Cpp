@@ -38,13 +38,13 @@ class Stack{
           }
       }
   public:
-      Array(){
+      Stack(){
       arr=new int[5];
       capacity=5;
       lastIndex=-1;
 
       }
-      ~Array(){
+      ~Stack(){
        delete arr;
       }
 
@@ -82,19 +82,6 @@ class Stack{
 
 };
 int main(){
-  Array a;
-  a.insertData(4);
-  a.insertData(5);
-  a.insertData(8);
-  a.insertData(7);
-  a.insertData(1);
-  a.insertData(2);
-  a.insertData(9);
-  a.insertData(5);
-  a.insertData(0,2);
-  
-a.displayArray();
-a.deleteArrayElement(2);
-a.displayArray();
-
+  Stack a;
+  a.push(4);
 }
