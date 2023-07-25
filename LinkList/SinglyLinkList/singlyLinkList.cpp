@@ -18,14 +18,15 @@ class Node{
      next=NULL;
      }
 };
-static Node *n;
+Node *n;
 
-static int lastIndex;
+int lastIndex;
 
 public:
 
     LinkList(){
-
+         n=NULL;
+         lastIndex=-1;
     }
     ~LinkList(){
       Node *t=n;
@@ -183,8 +184,6 @@ public:
      return r->data;
     }
 };
-LinkList::Node* LinkList::n=NULL;
-int LinkList::lastIndex=-1;
 int main(){
   LinkList l;
 
