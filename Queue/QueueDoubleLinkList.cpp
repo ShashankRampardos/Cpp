@@ -27,6 +27,17 @@ public:
     first=NULL;
     Size=0;
     }
+
+    ~Queue(){
+    Node *t,*r;
+    t=last;
+    r=t;
+    while(t->right!=NULL){
+        r=t;
+        t=t->right;
+        delete r;
+    }
+    }
    bool enqueue(int item){
     Node *t=new Node(item);
     if(first==NULL){
