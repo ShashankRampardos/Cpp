@@ -3,7 +3,13 @@
 using namespace std;
 
 /*
-
+*
+*1*
+*121*
+*12321*
+*123*
+*1*
+*
 */
 
 int main(){
