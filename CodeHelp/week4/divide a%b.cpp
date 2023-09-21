@@ -19,10 +19,10 @@ public:
             }
             else if(mid*Divisor<Dividend){
                 ans=mid;
-                l=mid+1;
+                l=mid+2;
              }
              else{
-                 h=mid-1;
+                 h=mid-2;
              }
              mid=l+(h-l)/2;
         }
