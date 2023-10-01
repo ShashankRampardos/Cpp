@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+
+class Solution{
+    bool predicate(int a[],int n,int s,int mid){
+      int sum;
+      int i=0;
+      bool flag=false;
+      while(s>0){
+            sum=0;
+      while(sum<=mid){
+        if(i>=n){
+            flag=true;
+            break;
+        }
+        sum=sum+a[i];
+        i++;
+      }
+      i--;
+      s--;
+
+      }
+      return flag;
+    }
+public:
+    int bookAlloc(int a[],int n,int b,int s){
+    //int n=a/sizeof(int);
+    int l=0;
+    int h=accumulate(a,a+n,0);
+    int mid=l+(h-l)/2;
+    int ans=-1;
+
+    while(l<h){
+        if(predicate(a,n,s,mid)){
+            h=mid-1;
+            ans=mid;
+        }
+        else
+            l=mid+1;
+     mid=l+(h-l)/2;
+    }
+    return ans;
+    }
+};
+int main(){
+Solution s;
+int a[]={12,34,67,90,100,101};
+int n=6;
+cout<<s.bookAlloc(a,n,n,3);
+
+}
