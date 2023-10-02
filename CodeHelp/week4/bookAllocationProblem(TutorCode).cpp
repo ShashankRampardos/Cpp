@@ -5,8 +5,6 @@
 using namespace std;
 
 
-// } Driver Code Ends
-//User function template in C++
 
 class Solution 
 {   
@@ -22,20 +20,21 @@ class Solution
                 sum=a[i];// strat from a[i] for next student allocation
                   // a[i] bacha ha abhi allocation may participate nahi hua vo, so start with a[i] for next allocation 
                 if(c>s) return false;// student finished but books still left then return false
-                
+                // false matlab books jada ha students kam
             }
             else {
                 sum+=a[i];//sum pages for current student allocation
             }
         }
         return true;// kahi false nahi aya matlab true at the end.
+        // true means sabh ko allocate ho gai book ya kuch students unallocated rahay gay
     }
     public:
     //Function to find minimum number of pages.
     int findPages(int a[], int b, int s) 
     {   if(s>b) return -1;
         int l=0;
-        int h=accumulate(a,a+b,0);
+        int h=accumulate(a,a+b,0);// ye keval integer range pay he kam karega
         int mid = l+(h-l)/2;
         int ans=-1;
         
@@ -54,24 +53,3 @@ class Solution
     }
 };
 
-//{ Driver Code Starts.
-
-int main() {
-    int t;
-    cin>>t;
-    while(t--){
-        int n;
-        cin>>n;
-        int A[n];
-        for(int i=0;i<n;i++){
-            cin>>A[i];
-        }
-        int m;
-        cin>>m;
-        Solution ob;
-        cout << ob.findPages(A, n, m) << endl;
-    }
-    return 0;
-}
-
-// } Driver Code Ends
