@@ -7,23 +7,18 @@ public:
          return s;
         while(j<s.size()){
             while(i<numRows&&j<s.size()){// go down
-           plane[i]+=s[j];
-           i++;j++;
+           plane[i++]+=s[j++];
             }
             i-=2;
         while(i>=0&&j<s.size()){// go up
-            plane[i]+=s[j];
-            i--;j++;
+            plane[i--]+=s[j++];
         }
         i+=2;    
         }
         
         string ans;// final answer
-        for(int x=0;x<plane.size();x++){// convert ans in from 2d to 1d
-            for(int y=0;y<plane[x].size();y++){
-            ans+=plane[x][y];
-            }
-        }
+        for(int x=0;x<plane.size();x++)// convert ans in from 2d to 1d
+            ans+=plane[x];  
         return ans;
     }
 };
