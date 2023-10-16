@@ -13,3 +13,6 @@ int main() {
     string str="babababablackship";
     cout<<findLast(str,str.length()-1,'z');
 }
+*/ TC: O(n) 
+   SC: O(n);
+*/
