@@ -21,3 +21,7 @@ public:
     // return option1;
     }
 };
+
+
+2,3,2// is may phat jayega agr 2 times call nahi kia solve ko or house rombber 1 ka logic lagaya tho
+
