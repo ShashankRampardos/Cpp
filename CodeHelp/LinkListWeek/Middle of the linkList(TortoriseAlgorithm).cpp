@@ -10,16 +10,7 @@
  */
 class Solution {
 public:
-    int lenOfList(ListNode* head){
-        int count=1;
-        ListNode* temp=head;
 
-        while(temp->next!=NULL){
-            temp=temp->next;
-            count++;
-        }
-        return count;
-    }
     ListNode* middleNode(ListNode* head) {
         //fastPointer:fp
         //slowPointer:sp
