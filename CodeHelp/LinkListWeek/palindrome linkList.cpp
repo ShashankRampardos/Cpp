@@ -41,7 +41,7 @@ class Solution {
     }
     bool compareList(ListNode* l1, ListNode* l2){
         //l1 may mid element say last elelment tak hay list, l2 may puri list hay
-        while(l1->next!=NULL){
+        while(l1!=NULL){//l1->next!=null karta if wo nichay wali if condition kko comment nahi karta tho
             if(l1->val!=l2->val){
                return false;
             }
@@ -50,17 +50,17 @@ class Solution {
                 l2=l2->next;
             }
         }
-        if(l1->val!=l2->val)
-           return false;
+        //if(l1->val!=l2->val)
+         //  return false;
         return true;
     }
 public:
     
     bool isPalindrome(ListNode* head) {
         
-        ListNode* list1=midList(head);//l1 of compare()
+        ListNode* list1=reverse(nullptr,midList(head));//l1 of compare()
         ListNode* list2=head;// l2 of compare() see meaning in compare() comments
-        list1=reverse(nullptr,list1);
+        
         return compareList(list1,list2);
 
     }
