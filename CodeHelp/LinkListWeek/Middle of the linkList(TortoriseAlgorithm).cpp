@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-
+// INMAY SAHI TARIKA SAY CODE NAHI KIA TORTOISE ALGORITHM, IDHAR CHAL JAYEGI MAGAR HAR JAGA NAHI
     ListNode* middleNode(ListNode* head) {
         //fastPointer:fp
         //slowPointer:sp
