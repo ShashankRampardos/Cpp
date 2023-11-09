@@ -11,7 +11,7 @@
 class Solution {
     ListNode* recursive(ListNode* tp,ListNode* t){
         if(t==NULL){
-            return tp;
+            return tp;//tq may new head hay abh
         }
         ListNode *tn=t->next;
         t->next=tp;
