@@ -24,7 +24,7 @@ public:
                 fp=(fp->next)->next;
                 sp=sp->next;/// then sp jump
             }
-            else {//handle even length linkList to get second middle node.
+            else {//handle even length linkList to get second middle node.//else part nahi hota tho even case may first midde element select ho jata
               sp=sp->next;
               break;
             }
