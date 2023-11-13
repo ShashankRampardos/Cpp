@@ -1,5 +1,5 @@
 class Solution{
-public:
+public://backTracking based solution
     void getlastNode(Node* head,int &n,int &ans){
         if(head==nullptr)return;
         
