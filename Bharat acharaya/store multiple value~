@@ -1,0 +1,6 @@
+lxi H, 2000h
+mvi B, 5h
+back: mvi M,B
+inx H
+dcr B
+jnz back

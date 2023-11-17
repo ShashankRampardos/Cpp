@@ -1,0 +1,16 @@
+mvi A,0FFH
+sta 0000H
+mvi A,0FFH
+sta 0001H
+mvi C, 00H
+
+lda 0000H
+mov B,A
+lda 0001H
+add B
+
+jnc SKIP
+inr C
+SKIP: sta 0002H
+mov A,C
+sta 0003H

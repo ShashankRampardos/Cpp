@@ -1,0 +1,17 @@
+mvi A,23H
+sta 0001H
+mvi A,34H
+sta 0002H
+mvi C, 00H
+
+lda 0001H
+mov B,A
+lda 0002H
+add B
+
+jnc SKIP
+inr C
+SKIP:sta 0003H
+mov A,C
+sta 0004H
+
