@@ -21,7 +21,9 @@ public:
         if(root==nullptr)
           return true;
 
-        bool currentNodeAns=1>=abs(height(root->left)-height(root->right));  
+        bool currentNodeAns;
+         if(1>=abs(height(root->left)-height(root->right))) currentNodeAns=true;
+        else return false;  
         bool leftAns=isBalanced(root->left);
         bool rightAns=isBalanced(root->right);
 
