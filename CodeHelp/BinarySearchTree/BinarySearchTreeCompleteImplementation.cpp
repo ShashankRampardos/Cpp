@@ -173,6 +173,22 @@ Bst* deleteNode(Bst* root,int target){
   return root;//ub agay pass kar root ko higher call function kay root->left ya root->right may
 }
 
+Bst* createBst(vector<int>& v,long long int low,long long int high){
+  if(low>high)
+    return nullptr;
+  int mid=(low+high)/2;
+  if((low+high)&1)
+    mid=1+low+(high-low)/2;
+  else
+    mid=low+(high-low)/2;
+  Bst* root=new Bst(v[mid]);
+
+  root->left=createBst(v,low,mid-1);
+  root->right=createBst(v,mid+1,high);
+  return root;
+  
+}
+
 int main() {
   Bst* root=nullptr;
   create(root);
@@ -182,5 +198,15 @@ int main() {
   
   inorderTriversal(root);
   deleteNode(root,5);
+  levelOrderTriversal(root);
+
+    vector<int> v;
+  v.push_back(1);
+  v.push_back(2);
+  v.push_back(3);
+  v.push_back(4);
+  v.push_back(5);
+  
+  root=createBst(v,0,v.size()-1);
   levelOrderTriversal(root);
 }
