@@ -36,7 +36,7 @@ public:
         if(!p&&!q)
           return true;
         if(p&&q){     
-        return ((p->val==q->val)&&isSameTree(p->left,q->left)&&isSameTree(p->right,q->right));
+        return ((p->val==q->val)&&isSameTree(p->left,q->left)&&isSameTree(p->right,q->right));//first condition false hui tho function call time save ho jayega.
         }
         else
          return false;
