@@ -37,8 +37,98 @@ class Heap{
       }
 
   }
+  void insertMax(int data){
+    if(size==capacity)
+         return;
+  
+      size++;
+      int index=size;
+      arr[index]=data;
+
+      while(index>1){
+
+        int parentIndex=index/2;
+
+        if(arr[parentIndex]>arr[index]){
+          swap(arr[parentIndex],arr[index]);
+          index=parentIndex;
+        }
+        else 
+        break;
+
+      }
+  }
+  void deleteMax(){
+    if(size==0)
+     return;
+
+     arr[1]=arr[size];
+     size--;
+
+     heapifyMax(arr,size,1);
+
+  }
+  void heapifyMax(int *arr,int size,int index){
+ 
+       while(index<=size){
+        int leftChild=2*index;
+        int rightChild=2*index+1;
+        int smallestKaIndex=index;
+
+        if(leftChild<=size&&arr[smallestKaIndex]>arr[leftChild])
+           smallestKaIndex=leftChild;
+        if(rightChild<=size&&arr[smallestKaIndex]>arr[rightChild])
+           smallestKaIndex=rightChild;
+
+        if(smallestKaIndex==index)
+          return;
+        else{
+          swap(arr[smallestKaIndex],arr[index]);
+          index=smallestKaIndex;
+        }
+
+       }
+  }
+
+ void  heapifyRecursiveMax(int* arr,int size,int index){
+
+         
+         int leftChild=2*index;
+         int rightChild=2*index+1;
+         int smallestKaIndex=index;
+
+         //ek case
+         if(leftChild<=size&&arr[smallestKaIndex]>arr[leftChild])
+           smallestKaIndex=leftChild;
+        if(rightChild<=size&&arr[smallestKaIndex]>arr[rightChild])
+           smallestKaIndex=rightChild;
+            
+            if(smallestKaIndex==index)//base case
+             return;
+            else{
+               swap(arr[smallestKaIndex],arr[index]);//ek case
+               heapifyRecursiveMax(arr,size,smallestKaIndex);//recursion
+            } 
+            //its like loop ek case is 1st iteration the come in loop 
+  }
+
+  void buildHeapMax(int *arr,int size){
+       for(int i=size/2;i>0;i--)
+         heapifyMax(arr,size,i);
+  }
+
+  void heapSortMax(int *arr,int size){
+       buildHeapMax(arr,size);
+       while(size>1){
+        swap(arr[1],arr[size]);
+        size--;
+        heapifyMax(arr,size,1);
+       }
+  }
 
   void deletion(){
+       if(size==0)
+       return;
        int  index=1;
         arr[1]=arr[size];//size-1 last index nahi hay size hay last index because heap array is 1 indexed here.
        size--;
@@ -137,7 +227,7 @@ int main() {
   //h. printHeap();
   int a[]={-1,7,1,6,3,6,4,6,11,14,10,51,12};
   //h.buildHeap(a,12);
-  h.heapSort(a,12);
+  h.heapSortMax(a,12);
   //h.heapifyRecursive(a,5,2);
   for(int i=0;i<=12;i++)
   cout<<a[i]<<" ";
