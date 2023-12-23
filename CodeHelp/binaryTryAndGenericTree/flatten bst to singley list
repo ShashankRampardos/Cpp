@@ -1,0 +1,44 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+  void pre(TreeNode* root,TreeNode* &iterator){//remember by reference is necessary
+      if(!root)
+       return;
+      
+       TreeNode* savedRight=root->right;//right will be manupulated so better save it in a variable for each call of this function.
+       iterator->right=root;//right is like list->next
+       iterator->left=nullptr;//
+       iterator=root;
+
+       
+       pre(root->left,iterator);
+       pre(savedRight,iterator);
+
+  }
+    void flatten(TreeNode* &root) {
+       if(!root)
+        return;
+        TreeNode* dummy=new TreeNode(-1);//temp head of our list, we take dummy->right as head later after tree get flattened.
+
+        TreeNode* iterator=dummy;//it will point to previous node of tree in traversal
+       
+        pre(root,iterator);//preorder traversal
+        
+        iterator=dummy;
+        iterator=iterator->right;//leave the dummy head
+        delete dummy;//get rid of the dummy head.
+ 
+        root=iterator;
+       
+    }
+};
